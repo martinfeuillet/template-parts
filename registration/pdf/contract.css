@@ -1,0 +1,136 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Helvetica", Times, Courier, sans-serif;
+    font-size: 14px;
+    line-height: 140%;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+h1,
+h2 {
+    font-size: 14px;
+}
+
+p {
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
+
+.mt-big {
+    margin-top: 32px;
+}
+
+.mt {
+    margin-top: 24px;
+}
+
+.mt-small {
+    margin-top: 16px !important;
+}
+
+.mt-0 {
+    margin-top: 0;
+}
+
+.mb-big {
+    margin-bottom: 32px;
+}
+
+.mb {
+    margin-bottom: 24px;
+}
+
+.mb-small {
+    margin-bottom: 16px;
+}
+
+.mb-0 {
+    margin-bottom: 0;
+}
+
+strong {
+    font-weight: bold;
+}
+
+ul,
+ol {
+    margin: 16px 0;
+}
+
+ul {
+    list-style-type: disc;
+}
+
+ol {
+    list-style-type: decimal;
+}
+
+li {
+    padding-bottom: 8px;
+}
+
+img {
+    display: block;
+}
+
+.clear {
+    clear: both;
+}
+
+.col td {
+    padding-bottom: 16px;
+}
+
+.col-2x td {
+    width: 50%;
+}
+
+table.border {
+    page-break-inside: avoid;
+}
+
+table.border,
+table.border th,
+table.border td {
+    border: 1px solid #000000;
+}
+
+table.border th,
+table.border td {
+    text-align: center;
+    padding: 8px 16px;
+}
+
+table.p-small th,
+table.p-small td {
+    padding: 4px 8px;
+}
+
+table.checkbox {
+    margin-top: 24px;
+}
+
+table.checkbox .checkbox__box {
+    width: 32px;
+}
+
+table.checkbox em {
+    font-style: italic;
+    color: #000000;
+}
+
+table.aligned-left {
+    margin: 0;
+}
+
+table.valign-top,
+table.valign-top {
+    vertical-align: top;
+}
