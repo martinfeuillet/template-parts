@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Bank infos - registration PDF
  *
@@ -36,7 +37,7 @@ get_template_part(
 	null,
 	array(
 		'number' => $section_number++,
-		'title'  => __( 'Coordonnées bancaires complètes*', 'crea' ),
+		'title'  => __('Coordonnées bancaires complètes*', 'crea'),
 	),
 );
 ?>
@@ -45,26 +46,26 @@ get_template_part(
 <table class="col col-2x" valign="top">
 	<tr>
 		<td>
-			<?php esc_html_e( 'Titulaire du compte', 'crea' ); ?> : <span style="color: #1155cc;"><?php echo esc_html( mb_strtoupper( $bank->get_holder(), 'UTF-8' ) ); ?></span>
+			<?php esc_html_e('Titulaire du compte', 'crea'); ?> : <span style="color: #1155cc;"><?php echo esc_html(mb_strtoupper($bank->get_holder(), 'UTF-8')); ?></span>
 		</td>
 		<td>
-			<?php esc_html_e( 'IBAN', 'crea' ); ?> : <span style="color: #1155cc;"><?php echo esc_html( mb_strtoupper( $bank->get_iban(), 'UTF-8' ) ); ?></span>
-		</td>
-	</tr>
-	<tr>
-		<td>
-			<?php esc_html_e( 'NPA et ville' ); ?> : <span style="color: #1155cc;"><?php echo esc_html( mb_strtoupper( $bank->get_city(), 'UTF-8' ) ); ?></span>
-		</td>
-		<td>
-			<?php esc_html_e( 'Clearing', 'crea' ); ?> : <span style="color: #1155cc;"><?php echo esc_html( mb_strtoupper( $bank->get_clearing(), 'UTF-8' ) ); ?></span>
+			<?php esc_html_e('IBAN', 'crea'); ?> : <span style="color: #1155cc;"><?php echo esc_html(mb_strtoupper($bank->get_iban(), 'UTF-8')); ?></span>
 		</td>
 	</tr>
 	<tr>
 		<td>
-			<?php esc_html_e( 'Nom de l\'établissement', 'crea' ); ?> : <span style="color: #1155cc;"><?php echo esc_html( mb_strtoupper( $bank->get_name(), 'UTF-8' ) ); ?></span>
+			<?php esc_html_e('NPA et ville'); ?> : <span style="color: #1155cc;"><?php echo esc_html(mb_strtoupper($bank->get_city(), 'UTF-8')); ?></span>
 		</td>
 		<td>
-			<?php esc_html_e( 'Swift', 'crea' ); ?> : <span style="color: #1155cc;"><?php echo esc_html( mb_strtoupper( $bank->get_swift(), 'UTF-8' ) ); ?></span>
+			<?php esc_html_e('Clearing', 'crea'); ?> : <span style="color: #1155cc;"><?php echo esc_html(mb_strtoupper($bank->get_clearing(), 'UTF-8')); ?></span>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<?php esc_html_e('Nom de l\'établissement', 'crea'); ?> : <span style="color: #1155cc;"><?php echo esc_html(mb_strtoupper($bank->get_name(), 'UTF-8')); ?></span>
+		</td>
+		<td>
+			<?php esc_html_e('Swift', 'crea'); ?> : <span style="color: #1155cc;"><?php echo esc_html(mb_strtoupper($bank->get_swift(), 'UTF-8')); ?></span>
 		</td>
 	</tr>
 </table>
@@ -74,18 +75,17 @@ if (
 	'brevet_federal' !== $formation_type &&
 	'formation_continue' !== $formation_type
 ) {
-	?>
+?>
 
 	<p class="mt-0 mb-0">
 		<em>*
 			<?php
-			if ( 'bachelor' === $formation_type ) {
+			if ('bachelor' === $formation_type) {
 
-				esc_html_e( 'En cas de remboursement, sauf instruction contraire, le montant dû est versé au titulaire du compte susmentionné.', 'crea' );
-
+				esc_html_e('En cas de remboursement, sauf instruction contraire, le montant dû est versé au.à la titulaire du compte susmentionné.', 'crea');
 			} else {
 
-				esc_html_e( 'En cas de remboursement, sauf précision contraire, le montant dû est versé au titulaire du compte mentionné.', 'crea' );
+				esc_html_e('En cas de remboursement, sauf précision contraire, le montant dû est versé au titulaire du compte mentionné.', 'crea');
 			}
 			?>
 		</em>

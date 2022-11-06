@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Third party payer - registration PDF
  *
@@ -28,7 +29,7 @@
  */
 
 // Defining section numbers depending on formation type.
-switch ( $formation_type ) {
+switch ($formation_type) {
 	default:
 		$clause_withdrawal_nb = 'IX';
 		break;
@@ -37,7 +38,7 @@ switch ( $formation_type ) {
 
 <p class="mb-0">
 	<strong>
-		<?php esc_html_e( 'LE TIERS-PAYEUR', 'crea' ); ?>
+		<?php esc_html_e('LE TIERS-PAYEUR', 'crea'); ?>
 	</strong>
 </p>
 
@@ -45,25 +46,25 @@ switch ( $formation_type ) {
 	<?php
 	echo sprintf(
 		// translators: section's number.
-		esc_html__( 'Dans le cas où le candidat/étudiant accepte que les factures soient à adresser par CREA à une tierce personne (autre que le candidat/étudiant), cette tierce personne complète la section ci-dessous et contresigne le présent contrat d’admission, de manière à s\'engager à s\'acquitter personnellement des coûts de l\'écolage et des coûts liés (Sections V et VI ci-dessus, en particulier), le cas échéant de toutes sommes dues au titre de désistement (Section %s ci-dessus).', 'crea' ),
+		esc_html__("Dans le cas où le/la candidat.e/étudiant.e accepte que les factures soient à adresser par CREA à une tierce personne (autre que le/la candidat.e/étudiant.e), cette tierce personne complète la section ci-dessous et contresigne le présent contrat d’admission, de manière à s'engager à s'acquitter personnellement des coûts de l'écolage et des coûts liés (Sections V et VI ci-dessus, en particulier), le cas échéant de toutes sommes dues au titre de désistement (Section VII ci-dessus) ou les autres cas prévus par le contrat (Sections VIII, IX ou XI).", 'crea'),
 		$clause_withdrawal_nb // phpcs:ignore
 	);
 	?>
 </p>
 
 <p>
-	<?php esc_html_e( 'Par sa signature, cette personne s\'engage ainsi, de manière indépendante et pour son propre compte, à acquitter en temps utile les factures que CREA lui fera parvenir en application du présent contrat d\'admission.', 'crea' ); ?>
+	<?php esc_html_e("Par sa signature, cette personne s'engage ainsi, de manière indépendante et pour son propre compte, à acquitter en temps utile les factures que CREA lui fera parvenir en application du présent contrat d'admission.", 'crea'); ?>
 </p>
 
 <table class="mt" valign="top">
 	<tr>
 		<td style="width: 9%; padding-right: 16px;">
-			<?php esc_html_e( 'Nom :', 'crea' ); ?>
+			<?php esc_html_e('Nom', 'crea'); ?>
 		</td>
 		<td style="width: 38%; border-bottom: 1px dotted #000000;"></td>
 		<td style="width: 6%;"></td>
 		<td style="width: 15%; padding-right: 8px;">
-			<?php esc_html_e( 'Prénom :', 'crea' ); ?>
+			<?php esc_html_e('Prénom', 'crea'); ?>
 		</td>
 		<td style="width: 32%; border-bottom: 1px dotted #000000;"></td>
 	</tr>
@@ -72,12 +73,12 @@ switch ( $formation_type ) {
 <table class="mt" valign="top">
 	<tr>
 		<td style="width: 9%; padding-right: 16px;">
-			<?php esc_html_e( 'Rue :', 'crea' ); ?>
+			<?php esc_html_e('Rue', 'crea'); ?>
 		</td>
 		<td style="width: 38%; border-bottom: 1px dotted #000000;"></td>
 		<td style="width: 6%;"></td>
 		<td style="width: 15%; padding-right: 8px;">
-			<?php esc_html_e( 'NPA et Ville :', 'crea' ); ?>
+			<?php esc_html_e('NPA et Ville', 'crea'); ?>
 		</td>
 		<td style="width: 32%; border-bottom: 1px dotted #000000;"></td>
 	</tr>
@@ -86,12 +87,12 @@ switch ( $formation_type ) {
 <table class="mt" valign="top">
 	<tr>
 		<td style="width: 9%; padding-right: 16px;">
-			<?php esc_html_e( 'Mail :', 'crea' ); ?>
+			<?php esc_html_e('Mail', 'crea'); ?>
 		</td>
 		<td style="width: 38%; border-bottom: 1px dotted #000000;"></td>
 		<td style="width: 6%;"></td>
 		<td style="width: 15%; padding-right: 8px;">
-			<?php esc_html_e( 'Mobile :', 'crea' ); ?>
+			<?php esc_html_e('Mobile', 'crea'); ?>
 		</td>
 		<td style="width: 32%; border-bottom: 1px dotted #000000;"></td>
 	</tr>
@@ -100,11 +101,11 @@ switch ( $formation_type ) {
 <table class="mt" valign="top">
 	<tr>
 		<td style="width: 47%;">
-			<?php esc_html_e( 'Lieu et date :', 'crea' ); ?>
+			<?php esc_html_e('Lieu et date', 'crea'); ?>
 		</td>
 		<td style="width: 6%;"></td>
 		<td style="width: 47%;">
-			<?php esc_html_e( 'Signature du tiers-payeur :', 'crea' ); ?>
+			<?php esc_html_e('Signature du tiers-payeur', 'crea'); ?>
 		</td>
 	</tr>
 	<tr>
@@ -118,7 +119,7 @@ switch ( $formation_type ) {
 		<td style="width: 47%; font-size: 10px; padding-top: 8px;"></td>
 		<td style="width: 6%;"></td>
 		<td style="width: 47%; font-size: 10px; padding-top: 8px;">
-			<?php esc_html_e( '(copie de la pièce d\'identité à fournir)', 'crea' ); ?>
+			<?php esc_html_e('(copie de la pièce d\'identité à fournir)', 'crea'); ?>
 		</td>
 	</tr>
 </table>
@@ -127,7 +128,7 @@ switch ( $formation_type ) {
 	<?php
 	echo sprintf(
 		// translators: section's number.
-		esc_html__( 'Dans l\'éventualité où cette tierce personne ne s\'acquitterait pas des sommes dues à CREA en temps utile, CREA conserve l\'intégralité de ses droits à l\'encontre du candidat/étudiant pour exiger que ce dernier s\'acquitte de ses engagements stipulés notamment dans les Section V, VI et %s ci-dessus (et rappelés sur cette page de signatures).', 'crea' ),
+		esc_html__("Dans l'éventualité où cette tierce personne ne s'acquitterait pas des sommes dues à CREA en temps utile, CREA conserve l'intégralité de ses droits à l'encontre du/de la candidat.e/étudiant.e pour exiger que ce dernier s'acquitte de ses engagements stipulés notamment dans les Section V, VI, VII, VIII, IX et XI ci-dessus (et rappelés sur cette page de signatures).", 'crea'),
 		$clause_withdrawal_nb // phpcs:ignore
 	);
 	?>
@@ -136,7 +137,7 @@ switch ( $formation_type ) {
 <table class="mt-small" valign="top">
 	<tr>
 		<td style="width: 40%;">
-			<?php esc_html_e( 'Nom et prénom du candidat/étudiant :' ); ?>
+			<?php esc_html_e('Nom et prénom du/de la candidat.e/étudiant.e : '); ?>
 		</td>
 		<td style="width: 60%; border-bottom: 1px dotted #000000;"></td>
 	</tr>
@@ -145,11 +146,11 @@ switch ( $formation_type ) {
 <table class="mt" valign="top">
 	<tr>
 		<td style="width: 47%;">
-			<?php esc_html_e( 'Lieu et date :', 'crea' ); ?>
+			<?php esc_html_e('Lieu et date', 'crea'); ?>
 		</td>
 		<td style="width: 6%;"></td>
 		<td style="width: 47%;">
-			<?php esc_html_e( 'Signature du candidat/étudiant(e) :', 'crea' ); ?>
+			<?php esc_html_e('Signature du/de la candidat.e/étudiant.e', 'crea'); ?>
 		</td>
 	</tr>
 	<tr>
@@ -161,26 +162,26 @@ switch ( $formation_type ) {
 	</tr>
 </table>
 
-<?php if ( 'bachelor' === $formation_type ) { ?>
+<?php if ('bachelor' === $formation_type) { ?>
 
 	<p class="mt">
-		<?php esc_html_e( 'La signature par CREA suit.', 'crea' ); ?>
+		<?php esc_html_e('La signature par CREA suit.', 'crea'); ?>
 	</p>
 
 	<p>
 		<strong>
-			<?php esc_html_e( 'CREA ÉCOLE DE CRÉATION EN COMMUNICATION SA', 'crea' ); ?>
+			<?php esc_html_e('CREA ÉCOLE DE CRÉATION EN COMMUNICATION SA', 'crea'); ?>
 		</strong>
 	</p>
 
 	<table class="mt" valign="top">
 		<tr>
 			<td style="width: 47%;">
-				<?php esc_html_e( 'Lieu et date :', 'crea' ); ?>
+				<?php esc_html_e('Lieu et date :', 'crea'); ?>
 			</td>
 			<td style="width: 6%;"></td>
 			<td style="width: 47%;">
-				<?php echo 'René Engelmann - ' . esc_html__( 'Directeur', 'crea' ); ?>
+				<?php echo 'René Engelmann - ' . esc_html__('Directeur', 'crea'); ?>
 			</td>
 		</tr>
 		<tr>
@@ -201,12 +202,10 @@ switch ( $formation_type ) {
 			'brevet_federal' === $formation_type
 		) {
 
-			esc_html_e( 'Les signatures de l\'employeur et de CREA suivent.', 'crea' );
-
+			esc_html_e('Les signatures de l\'employeur et de CREA suivent.', 'crea');
 		} else {
 
-			esc_html_e( 'Les signatures de l\'employeur/responsable de stage et de CREA suivent.', 'crea' );
-
+			esc_html_e('Les signatures de l\'employeur/responsable de stage et de CREA suivent.', 'crea');
 		}
 		?>
 	</p>
