@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Fonction utilisé pour obtenir le code HTML utilisé pour générer le dossier d'incription
  *
@@ -20,15 +21,15 @@
 
 use WPML\TM\Menu\TranslationBasket\Strings;
 
-function pdf_generate_html( int $formation_id, Student $student, Parents $contact1, Parents $contact2, Company $company, BankAccount $bank, array $formations, string $modalite_nb = '', string $free_option_nb ) {
+function pdf_generate_html(int $formation_id, Student $student, Parents $contact1, Parents $contact2, Company $company, BankAccount $bank, array $formations, string $modalite_nb = '', string $free_option_nb) {
 
 	// Check if we have a formation id.
-	if ( empty( $formation_id ) ) {
-		return esc_html__( 'Please enter a formation ID', 'crea' );
+	if (empty($formation_id)) {
+		return esc_html__('Please enter a formation ID', 'crea');
 	}
 
 	// Check if formation type is part of accepted types.
-	$formation_type       = get_post_type( $formation_id );
+	$formation_type       = get_post_type($formation_id);
 	$formation_type_lists = array(
 		'formation_continue',
 		'master',
@@ -37,30 +38,31 @@ function pdf_generate_html( int $formation_id, Student $student, Parents $contac
 		'certificat',
 	);
 
-	if ( ! in_array( $formation_type, $formation_type_lists, true ) ) {
-		return __( 'Formation not valid', 'crea' );
+	if (!in_array($formation_type, $formation_type_lists, true)) {
+		return __('Formation not valid', 'crea');
 	}
 
 	// Globals vars.
-	$sesion_start_date        = get_field( 'session_start', $formation_id );
-	$session_start_year       = wp_date( 'Y', strtotime( $sesion_start_date ) );
-	$session_start_month_year = ucfirst( wp_date( 'F Y', strtotime( $sesion_start_date ) ) );
-	$session_end_date         = get_field( 'session_end', $formation_id );
-	$session_end_year         = wp_date( 'Y', strtotime( $session_end_date ) );
-	$session_end_month_year   = ucfirst( wp_date( 'F Y', strtotime( $session_end_date ) ) );
+	$sesion_start_date        = get_field('session_start', $formation_id);
+	$session_start_year       = wp_date('Y', strtotime($sesion_start_date));
+	$session_start_month_year = ucfirst(wp_date('F Y', strtotime($sesion_start_date)));
+	$session_end_date         = get_field('session_end', $formation_id);
+	$session_end_year         = wp_date('Y', strtotime($session_end_date));
+	$session_end_month_year   = ucfirst(wp_date('F Y', strtotime($session_end_date)));
 	$base_pdf_path            = get_stylesheet_directory() . '/template-parts/registration/pdf';
 	$padding_bottom           = '35mm';
 	$section_number           = 1;
-	$formation_name           = get_post_type_object( $formation_type )->labels->singular_name;
+	$formation_name           = get_post_type_object($formation_type)->labels->singular_name;
 
 	ob_start();
-	?>
+?>
 
-	<link rel="stylesheet" href="<?php echo esc_url( get_stylesheet_directory() . '/template-parts/registration/pdf/crea-contract.css' ); ?>" type="text/css"> <?php // phpcs:ignore ?>
+	<link rel="stylesheet" href="<?php echo esc_url(get_stylesheet_directory() . '/template-parts/registration/pdf/crea-contract.css'); ?>" type="text/css"> <?php // phpcs:ignore 
+																																								?>
 
-	<?php
+<?php
 	// Get pages.
-	switch ( $formation_type ) {
+	switch ($formation_type) {
 		case 'bachelor':
 			require $base_pdf_path . '/components/document/header.php';
 			require $base_pdf_path . '/components/section/header.php';
@@ -79,6 +81,7 @@ function pdf_generate_html( int $formation_id, Student $student, Parents $contac
 			require $base_pdf_path . '/components/section/clause-payment.php';
 			require $base_pdf_path . '/components/section/clause-echec.php';
 			require $base_pdf_path . '/components/section/clause-exceptional.php';
+			require $base_pdf_path . '/components/section/clause-fired.php';
 			require $base_pdf_path . '/components/section/clause-failed.php';
 			require $base_pdf_path . '/components/page/break.php'; // Pagebreak.
 			require $base_pdf_path . '/components/section/clause-adjournment.php';

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Clause - Withdrawal - registration PDF
  *
@@ -31,10 +32,10 @@
 
 <!-- Clause de désistement -->
 <?php
-$disistment_clauses = get_field( 'disistment_clauses', $formation_id );
+$disistment_clauses = get_field('disistment_clauses', $formation_id);
 
-if ( ! empty( $disistment_clauses ) ) {
-	?>
+if (!empty($disistment_clauses)) {
+?>
 
 	<!-- Level 1 title -->
 	<?php
@@ -43,19 +44,19 @@ if ( ! empty( $disistment_clauses ) ) {
 		null,
 		array(
 			'number' => $section_number++,
-			'title'  => __( 'Clauses de désistement', 'crea' ),
+			'title'  => __('Clauses de désistement', 'crea'),
 		),
 	);
 	?>
 
 	<?php
-	foreach ( $disistment_clauses as $index => $disistment_clause ) {
-		?>
+	foreach ($disistment_clauses as $index => $disistment_clause) {
+	?>
 
-		<?php if ( ! empty( $disistment_clause['title'] ) ) { ?>
+		<?php if (!empty($disistment_clause['title'])) { ?>
 			<p class="<?php echo 0 === $index ? 'mt-0' : 'mt-small'; ?>">
 				<strong>
-					<?php echo esc_html( $disistment_clause['title'] ); ?>
+					<?php echo esc_html($disistment_clause['title']); ?>
 				</strong>
 			</p>
 		<?php } ?>
@@ -64,30 +65,28 @@ if ( ! empty( $disistment_clauses ) ) {
 			str_replace(
 				'<p>',
 				'<p class="mt-0">',
-				wpautop( $disistment_clause['clause'] ),
+				wpautop($disistment_clause['clause']),
 			)
 		);
 		?>
-		<?php
+	<?php
 	}
 	?>
 
 	<p class="mb-0">
 		<strong>
 			<?php
-			if ( 'brevet_federal' === $formation_type ) {
+			if ('brevet_federal' === $formation_type) {
 
-				esc_html_e( "Important : La résiliation du présent contrat d'admission, par l'une des parties, doit être formellement portée à la connaissance de l'autre, par lettre recommandée. L'information par courriel n'est pas admise ni valable.", 'crea' );
-
+				esc_html_e("Important : La résiliation du présent contrat d'admission, par l'une des parties, doit être formellement portée à la connaissance de l'autre, par lettre recommandée. L'information par courriel n'est pas admise ni valable.", 'crea');
 			} else {
 
-				esc_html_e( "Important : Tout désistement, selon ce qui précède, doit être formellement portée à la connaissance de CREA par lettre recommandée. L'information par courriel n'est pas admise ni valable.", 'crea' );
-
+				esc_html_e("Important : Tout désistement, selon ce qui précède, doit être formellement portée à la connaissance de CREA par lettre recommandée. La date de réception fait foi. L’information par courriel n’est pas admise ni valable.", 'crea');
 			}
 			?>
 		</strong>
 	</p>
 
-	<?php
+<?php
 }
 ?>

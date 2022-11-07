@@ -843,7 +843,7 @@ if (!empty($data)) {
 					endwhile;
 				endif;
 				?>
-				<p class="text-bold"><?php esc_html_e('Important : Tout désistement, selon ce qui précède, doit être formellement portée à la connaissance de CREA par lettre recommandée. L’information par courriel n’est pas admise ni valable.', 'crea'); ?></p>
+				<p class="text-bold"><?php esc_html_e('Important : Tout désistement, selon ce qui précède, doit être formellement portée à la connaissance de CREA par lettre recommandée. La date de réception fait foi. L’information par courriel n’est pas admise ni valable.', 'crea'); ?></p>
 			</div>
 			<div class="clause__wrapper">
 				<p class="text-title"><?php _e('Retard de paiement', 'crea'); ?></p>
